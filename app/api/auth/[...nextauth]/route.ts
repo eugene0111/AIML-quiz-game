@@ -20,7 +20,7 @@ const handler = NextAuth({
       if (user.email && user.email.endsWith("@nsut.ac.in")) {
         return true;
       }
-      return "/auth/denied";
+      return false;
     }
   }
 });
