@@ -4,6 +4,7 @@ export interface Team {
   id: TeamId;
   name: string;
   score: number;
+  players: string[]; // List of player names
 }
 
 export type GamePhase = 'setup' | 'asking' | 'answering' | 'grading';
@@ -17,4 +18,5 @@ export interface GameState {
   currentRound: number;
   activeTeamId: TeamId; // The team whose "turn" it is (Starts as asking)
   phase: GamePhase;
+  onlinePlayers: { name: string; teamId?: TeamId }[];
 }
