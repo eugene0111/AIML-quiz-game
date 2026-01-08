@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "ts-node --project tsconfig.server.json server.ts",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production ts-node --project tsconfig.server.json server.ts",
+    "start": "node server.js",
     "lint": "eslint"
   },
   "dependencies": {
@@ -23,15 +23,9 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/express": "^5.0.6",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "request": "^2.88.2",
-    "tailwindcss": "^4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "tailwindcss": "^4"
   }
 }
