@@ -16,7 +16,6 @@ app.prepare().then(() => {
   const io = new Server(httpServer);
 
   io.on("connection", (socket) => {
-
     socket.on("join_game", (data) => {
       gameStore.addPlayer(socket.id, data.name);
       io.emit("state_update", gameStore.getState());
@@ -57,7 +56,7 @@ app.prepare().then(() => {
   });
 
   // Let Next.js handle all HTTP routes
-  server.all("*", (req, res) => {
+  server.use((req, res) => {
     return handle(req, res);
   });
 

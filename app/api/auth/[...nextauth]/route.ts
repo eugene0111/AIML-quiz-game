@@ -15,6 +15,12 @@ const handler = NextAuth({
   callbacks: {
     async session({ session, token }) {
         return session;
+    },
+    async signIn({ user }) {
+      if (user.email && user.email.endsWith("@nsut.ac.in")) {
+        return true;
+      }
+      return "/auth/denied";
     }
   }
 });
